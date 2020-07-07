@@ -14,7 +14,8 @@ Column Names Reference:
 """
 
 # Input of Dataset
-inputCSV = "OutputDatasets/Smart_Parking_Stays_JanFebMar_2017_NumberOfParkingsArrivedGroupedByHours.csv"
+inputCSV = "OutputDatasets/Smart_Parking_Stays_Formatted_NumberOfParkingsArrivedGroupedByHours.csv"
+#inputCSV = "OutputDatasets/Smart_Parking_Stays_JanFebMar_2017_NumberOfParkingsArrivedGroupedByHours.csv"
 outputGraphFolder = "OutputGraphs/"
 
 # Begin Algorithm
@@ -36,7 +37,7 @@ final_data_plot = sns.barplot(x=data['HourRange'], y=data['TotalParkingLots'])
 final_data_plot.set_xticklabels(final_data_plot.get_xticklabels(), rotation=60, ha='right', fontsize=16)
 final_data_plot.set_yticklabels(final_data_plot.get_yticks(), size=16, )
 
-plt.title("Number of Parkings Arrived Between 01/01/2017 to 31/03/2017 by Hour\nTotal Parkings: "+str(total_parkings), fontsize=30, pad=20)
+plt.title("Number of Parkings Arrived by Hour (579 Days Dataset)\nTotal Parkings: "+str(total_parkings), fontsize=30, pad=20)
 plt.xlabel("Arrived Hour",  labelpad=20,  fontsize=20)
 plt.ylabel("Number of Parking Lots Started", labelpad=20, fontsize=20)
 
@@ -45,7 +46,7 @@ plt.show()
 
 fig = final_data_plot.get_figure()
 print("Saving Output Graph 1 (Total)...")
-fig.savefig(outputGraphFolder+"Smart_Parking_Stays_JanFebMar_2017_TotalOfParkingsArrivedByHourRange.png")
+fig.savefig(outputGraphFolder+"Smart_Parking_Stays_Formatted_TotalOfParkingsArrivedByHourRange.png")
 
 ## Graph2
 
@@ -68,7 +69,7 @@ for p in ax.patches:
     ax.annotate(percentage, (x, y), size=12)
 # End Function
 
-plt.title("Daily Average Parking per Hour - Between 01/01/2017 to 31/03/2017\nAverage Number of Parking Lots per Day: "+str(total_parkings_day_average), fontsize=30, pad=20)
+plt.title("Daily Average Parking per Hour - (579 Days Dataset)\nAverage Number of Parking Lots per Day: "+str(total_parkings_day_average), fontsize=30, pad=20)
 plt.xlabel("Arrived Hour",  labelpad=20,  fontsize=20)
 plt.ylabel("Number of Parking Lots Started", labelpad=20, fontsize=20)
 
@@ -77,7 +78,7 @@ plt.show()
 
 fig = ax.get_figure()
 print("Saving Output Graph 1 (Total)...")
-fig.savefig(outputGraphFolder+"Smart_Parking_Stays_JanFebMar_2017_DailyAverageOfParkingsArrivedByHourRange.png", bbox_inches="tight")
+fig.savefig(outputGraphFolder+"Smart_Parking_Stays_Formatted_DailyAverageOfParkingsArrivedByHourRange.png", bbox_inches="tight")
 
 ## Graph3
 
@@ -92,7 +93,7 @@ final_data_plot = sns.barplot(x=data['HourRange'], y=data['DailyParkingPercentag
 final_data_plot.set_xticklabels(final_data_plot.get_xticklabels(), rotation=60, ha='right', fontsize=16)
 final_data_plot.set_yticklabels(final_data_plot.get_yticks(), size=16, )
 
-plt.title("Daily Average Parking per Hour (Percentage) - Between 01/01/2017 to 31/03/2017\nAverage Number of Parking Lots per Day: "+str(total_parkings_day_average), fontsize=30, pad=20)
+plt.title("Daily Average Parking per Hour (Percentage) - (579 Days Dataset)\nAverage Number of Parking Lots per Day: "+str(total_parkings_day_average), fontsize=30, pad=20)
 plt.xlabel("Arrived Hour",  labelpad=20,  fontsize=20)
 plt.ylabel("Percentage of Parking Lots Started (%)", labelpad=20, fontsize=20)
 
@@ -101,6 +102,6 @@ plt.show()
 
 fig = final_data_plot.get_figure()
 print("Saving Output Graph 1 (Total)...")
-fig.savefig(outputGraphFolder+"Smart_Parking_Stays_JanFebMar_2017_DailyPercentageAverageOfParkingsArrivedByHourRange.png")
+fig.savefig(outputGraphFolder+"Smart_Parking_Stays_Formatted_DailyPercentageAverageOfParkingsArrivedByHourRange.png")
 
 exit()
