@@ -51,10 +51,19 @@ In the <code>plotGraph2.py</code> you can specify a time in the input header to 
 
 #### 2.1 PlotGraph.py
 
-<img src="Tutorial/Smart_Parking_Stays_05_03_2017.png"  style="max-width:400px"/>
+<img src="Tutorial/Smart_Parking_Stays_05_03_2017.png" width="650px"/>
 
 #### 2.2 PlotGraph2.py
 
-<img src="/Tutorial/Smart_Parking_Stays_JanFebMar_2017_ParkingsArrivedBetween8-9hours.png" style="max-width:400px"/>  <img style="max-width:400px" src="/Tutorial/Smart_Parking_Stays_JanFebMar_2017_ParkingsArrivedBetween10-11hours.png"/>
+<img src="/Tutorial/Smart_Parking_Stays_JanFebMar_2017_ParkingsArrivedBetween8-9hours.png" width="650px"/>
 
-<img style="max-width:400px"  src="/Tutorial/Smart_Parking_Stays_JanFebMar_2017_ParkingsArrivedBetween12-13hours.png"/>  <img style="max-width:400px"  src="/Tutorial/Smart_Parking_Stays_JanFebMar_2017_ParkingsArrivedBetween15-16hours.png"/>  
+<img style="max-width:400px"  src="/Tutorial/Smart_Parking_Stays_JanFebMar_2017_ParkingsArrivedBetween12-13hours.png" width="400px"/>  <img   src="/Tutorial/Smart_Parking_Stays_JanFebMar_2017_ParkingsArrivedBetween15-16hours.png" width="400px"/>  
+
+#### 2.3 PlotGraph3.py
+
+<img src="/OutputGraphs/Smart_Parking_Stays_Formatted_DailyAverageOfParkingsArrivedByHourRange.png" width="650px"/>
+<img src="/OutputGraphs/Smart_Parking_Stays_Formatted_TotalOfParkingsArrivedByHourRange.png" width="650px"/>
+
+#### 2.4 PlotGraph4.py
+ 
+<img src="/OutputGraphs/Smart_Parking_Stays_Formatted_DailyAverageParkingLotsArrivedDeparted.png" width="650px"/>
