@@ -41,38 +41,40 @@ outputCSV = "OutputDatasets/Smart_Parking_Stays_Formatted_AllParkingsOfGivenPlac
 
 queryStreet = 'Bougainville St'
 
-print("Opening Dataset...")
+print("[Filter 1] Opening Dataset...")
 data = pd.read_csv(inputCSV)
 
-print("Setting the StreetName Filter in Dataset...")
+print("[Filter 1] Setting the StreetName Filter in Dataset...")
 data = data[(data['Street'] == 'Bougainville St')]
 
-print("Saving Output File...")
+print("[Filter 1] Saving Output File...")
 data.to_csv(outputCSV, encoding='utf-8-sig', index=False, header=True)
 
 # Filter 2 - Group Dataset By Same DATES (Days)
 inputCSV = "OutputDatasets/Smart_Parking_Stays_Formatted_AllParkingsOfGivenPlace.csv"
 outputCSV = "OutputDatasets/Smart_Parking_Stays_Formatted_AllParkingsOfGivenPlace_TotalByDay.csv"
 
-print("Opening Dataset...")
+print("[Filter 2] Opening Dataset...")
 data = pd.read_csv(inputCSV)
 
 data[' Arrived'] = pd.to_datetime(data[' Arrived']).dt.normalize()
 
 save = data[' Arrived'].value_counts()
 
+save.columns = ['Total']
+save.index.name = 'Date'
+
+print("[Filter 2] Saving Output File...")
 save.to_csv(outputCSV, encoding='utf-8-sig', index=True, header=True)
 
 # Filter 3 - Order By Date & Get Only 1 Year
 inputCSV = "OutputDatasets/Smart_Parking_Stays_Formatted_AllParkingsOfGivenPlace_TotalByDay.csv"
 outputCSV = "OutputDatasets/Smart_Parking_Stays_Formatted_AllParkingsOfGivenPlace_TotalByDay_Order.csv"
 
-print("Opening Dataset...")
+print("[Filter 3] Opening Dataset...")
 data = pd.read_csv(inputCSV)
 
-print(data.head(5))
-
-print("Setting the Pattern in DateTime Columns...")
+print("[Filter 3] Setting the Pattern in DateTime Columns...")
 data['Date'] = pd.to_datetime(data['Date'], errors='ignore')
 data['Date'] = pd.to_datetime(data['Date'].dt.strftime('%Y/%m/%d'))
 
@@ -80,5 +82,5 @@ data = data.sort_values(['Date'])
 
 save = data[(data['Date'].dt.year == 2016)]
 
-print("Saving Output File...")
+print("[Filter 3] Saving Output File...")
 save.to_csv(outputCSV, encoding='utf-8-sig', index=False, header=True)
